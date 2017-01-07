@@ -37,6 +37,73 @@
                 var myWindow = window.open("pdpa.html");
             }
         </script>
+        <header id="header">
+    <div class="container">
+        <h1 class="logo">
+            <a href="index.jsp">
+                <img alt="Island Furniture" width="180" height="80" data-sticky-width="82" data-sticky-height="40" src="../../img/logo.png">
+            </a>
+        </h1>
+        
+        <nav>
+            <ul class="nav nav-pills nav-top">
+                <li>
+                    <a>Welcome member.name!</a>
+                </li>
+                <li>
+                    <a href="../../ECommerce_StoresServlet"><i class="icon icon-map-marker"></i>Store Location</a>
+                </li>
+                <li>
+                    <!--###-->
+                    <a href="shoppingCart.jsp"><i class="icon icon-shopping-cart"></i>Shopping Cart</a>
+                </li>
+                <li>
+                    <a href="../../ECommerce_GetMember"><i class="icon icon-user"></i>Profile</a>
+                </li>
+                <li>
+                    <a href="contactUs.jsp"><i class="icon icon-shopping-cart"></i>Contact Us</a>
+                </li>
+                <li>
+                    <a href="../../ECommerce_LogoutServlet"><i class="icon icon-unlock-alt"></i>Logout</a>
+                </li>
+            </ul>
+            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+                <i class="icon icon-bars"></i>
+            </button>
+        </nav>
+        
+    </div>
+    <div class="navbar-collapse nav-main-collapse collapse">
+        <div class="container">
+            <nav class="nav-main mega-menu">
+                <ul class="nav nav-pills nav-main" id="mainMenu">
+                    <li>
+                        <a href="virtualStore.jsp">Virtual Store</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#">
+                            All Departments
+                            <i class="icon icon-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Tables+%26+Desks"><i class="icon icon-map-marker"></i> Tables &amp; Desk</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Bathroom"><i class="icon icon-map-marker"></i> Bathroom</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Beds+%26+Mattresses"><i class="icon icon-map-marker"></i> Beds &amp; Mattresses</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Sofas+%26+Chair"><i class="icon icon-map-marker"></i> Sofas &amp; Chair</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Cabinets+%26+Storage"><i class="icon icon-map-marker"></i> Cabinets &amp; Storage</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Lightings"><i class="icon icon-map-marker"></i> Lightings</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Study"><i class="icon icon-map-marker"></i> Study</a></li>
+                            <li><a href="../../ECommerce_FurnitureCategoryServlet?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>
+                            <li><a href="../../ECommerce_AllRetailProductsServlet"><i class="icon icon-coffee"></i> Retail Products</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+        
         <jsp:include page="menu2.jsp" />
         <div role="main" class="main">
             <section class="page-top">
@@ -50,6 +117,7 @@
             </section>
             <div class="container">
                 <%%>
+                
                 <jsp:include page="/displayMessageLong.jsp" />
                 <!-- /.warning -->
                 <div class="col-md-12">
@@ -411,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                                                                                             
                 <%
                         session.removeAttribute("member");
                     } catch (Exception ex) {
@@ -422,5 +490,100 @@
         </div>
     </div>
     <jsp:include page="footer.html" />
+    <footer id="footer">
+    <script>
+        function addToSubscription() {
+            
+            document.subscriptionManagement.action = "../../ECommerce_NewsletterSubscribeServlet";
+            document.subscriptionManagement.submit();
+        }
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="footer-ribbon">
+                <span>Get in Touch</span>
+            </div>
+            <div class="col-md-3">
+                <div class="newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+
+                    <div class="alert alert-success hidden" id="newsletterSuccess">
+                        <strong>Success!</strong> You've been added to our email list.
+                    </div>
+
+                    <div class="alert alert-danger hidden" id="newsletterError"></div>
+
+                    <form name="subscriptionManagement">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Email Address" name="email" id="newsletterEmail" type="text">
+                            <span class="input-group-btn">
+                                <a href="#myModal" data-toggle="modal"><button class="btn btn-default" type="submit">Go!</button></a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-details">
+                    <h4>Contact Us</h4>
+                    <ul class="contact">
+                        <li><p><i class="icon icon-map-marker"></i> <strong>Address:</strong> 2 Jurong Gateway Road, JEM #09-01, Singapore</p></li>
+                        <li><p><i class="icon icon-phone"></i> <strong>Phone:</strong> (65) 6475-7890</p></li>
+                        <li><p><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:support@if.com">support@if.com</a></p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <ul class="social-icons">
+                        <li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
+                        <li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
+                        <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <a href="index.html" class="logo">
+                        <img alt="Island Furniture" class="img-responsive" src="../../img/logo-footer.png">
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <p>Copyright 2014. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-4">
+                    <nav id="sub-menu">
+                        <ul>
+                            <li><a href="../selectCountry.jsp">Change Location</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="dialog" class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Thank you for subscribing</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="messageBox">You have been added to our subscription list!</p>
+                </div>
+                <div class="modal-footer">                        
+                    <input class="btn btn-primary" name="btnRemove" type="submit" value="Ok" onclick="addToSubscription()">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
 </body>
 </html>
